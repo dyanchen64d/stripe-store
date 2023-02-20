@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Container, Navbar, Modal } from 'react-bootstrap';
+import { Button, Navbar, Modal } from 'react-bootstrap';
 import { useContext } from 'react';
 import { CartContext } from '../cartContext';
 import CartProduct from './CartProduct';
@@ -19,7 +19,7 @@ const NavbarComponent = () => {
 
   const checkout = async () => {
     try {
-      const res = await fetch('http://localhost:4003/checkout', {
+      const res = await fetch('https://stripe-store.onrender.com/checkout', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
