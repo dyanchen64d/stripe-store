@@ -9,6 +9,10 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(express.json());
 
+app.get('/ping', (req, res) => {
+  res.send('pong');
+});
+
 app.post('/checkout', async (req, res) => {
   const { items } = req.body;
 
