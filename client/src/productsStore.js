@@ -1,16 +1,20 @@
+// COFFEE_PRICE=price_1MdWLqEcHIGilXgH7x8ZJ44C
+// SUNGLASSESS_PRICE=price_1MdWN4EcHIGilXgHruinXFe3
+// CAMERA_PRICE=price_1MdWOjEcHIGilXgHQjsGTRt4
+
 const products = [
   {
-    id: '1',
+    id: 'price_1MdWLqEcHIGilXgH7x8ZJ44C',
     title: 'Coffee',
     price: 4.99,
   },
   {
-    id: '2',
+    id: 'price_1MdWN4EcHIGilXgHruinXFe3',
     title: 'Sunglasses',
     price: 9.99,
   },
   {
-    id: '3',
+    id: 'price_1MdWOjEcHIGilXgHQjsGTRt4',
     title: 'Camera',
     price: 39.99,
   },

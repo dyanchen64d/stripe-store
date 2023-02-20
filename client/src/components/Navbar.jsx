@@ -17,6 +17,28 @@ const NavbarComponent = () => {
     0
   );
 
+  const checkout = async () => {
+    try {
+      const res = await fetch('http://localhost:4003/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ items: cart.items }),
+      });
+
+      const data = await res.json();
+
+      const { url } = data;
+
+      if (url) {
+        window.location.assign(url); // forword user to stripe
+      }
+    } catch (error) {
+      console.log('checkout error: ', error);
+    }
+  };
+
   return (
     <>
       <Navbar expand="sm">
@@ -40,7 +62,9 @@ const NavbarComponent = () => {
                 </div>
               ))}
               <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
-              <Button variant="success">Purchase items!</Button>
+              <Button variant="success" onClick={checkout}>
+                Purchase items!
+              </Button>
             </>
           ) : (
             <h1>There are no items in your cart!</h1>
